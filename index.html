@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html lang=\"de\">
+<html lang="de">
 <head>
-  <meta charset=\"UTF-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-  <title>New Orleans Top 10 Sehenswürdigkeiten</title>
-  <script src=\"https://cdn.tailwindcss.com\"></script>
-  <script src=\"https://unpkg.com/react@18/umd/react.development.js\" crossorigin></script>
-  <script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\" crossorigin></script>
-  <script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Bars und Pubs in New Orleans - Für verwöhnte Zürcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body class=\"bg-gray-50\">
+<body class="bg-gray-50">
 
-<div id=\"root\" class=\"p-4\"></div>
+<div id="root" class="p-4"></div>
 
-<script type=\"text/babel\">
+<script type="text/babel">
 const { useState } = React;
 
-const NewOrleansMap = () => {
-  const [selectedPOI, setSelectedPOI] = useState(null);
-  
-  const pois = [
-    { id: 1, name: \"French Quarter\", description: \"Das historische Herz von New Orleans mit prächtiger französischer und spanischer Architektur, Straßenkünstlern und lebhaften Bars.\", lat: 29.9584, lng: -90.0644, color: \"#E53E3E\" },
-    { id: 2, name: \"Garden District\", description: \"Elegantes Viertel mit prächtigen Villen aus dem 19. Jahrhundert, üppigen Gärten und dem historischen Lafayette Cemetery.\", lat: 29.9274, lng: -90.0843, color: \"#38A169\" },
-    { id: 3, name: \"Jackson Square\", description: \"Historischer Platz mit der St. Louis Cathedral, umgeben von Künstlern, Straßenmusikern und dem Presbytere und Cabildo Museum.\", lat: 29.9574, lng: -90.0634, color: \"#805AD5\" },
-    { id: 4, name: \"Bourbon Street\", description: \"Die berühmteste Straße des French Quarter, bekannt für ihre Bars, Musik-Clubs und das pulsierende Nachtleben.\", lat: 29.9591, lng: -90.0652, color: \"#D69E2E\" },
-    { id: 5, name: \"National WWII Museum\", description: \"Preisgekröntes Museum mit beeindruckenden Ausstellungen zur Geschichte des Zweiten Weltkriegs.\", lat: 29.9430, lng: -90.0704, color: \"#3182CE\" },
-    { id: 6, name: \"Frenchmen Street\", description: \"Das authentische Musikviertel von New Orleans mit zahlreichen Live-Musik-Lokalen und einer entspannten Atmosphäre.\", lat: 29.9639, lng: -90.0577, color: \"#ED64A6\" },
-    { id: 7, name: \"City Park\", description: \"Weitläufiger Park mit alten Eichen, dem New Orleans Museum of Art, Botanischem Garten und dem Skulpturengarten.\", lat: 29.9902, lng: -90.0988, color: \"#48BB78\" },
-    { id: 8, name: \"St. Louis Cemetery No. 1\", description: \"Historischer Friedhof mit beeindruckenden oberirdischen Gräbern und der Grabstätte der Voodoo-Königin Marie Laveau.\", lat: 29.9593, lng: -90.0720, color: \"#718096\" },
-    { id: 9, name: \"Mardi Gras World\", description: \"Einblick in die Herstellung der spektakulären Wagen für die weltberühmten Mardi Gras Paraden.\", lat: 29.9354, lng: -90.0618, color: \"#9C4221\" },
-    { id: 10, name: \"Steamboat Natchez\", description: \"Historisches Schaufelraddampfschiff für Rundfahrten auf dem Mississippi mit Live-Jazz und Essensmöglichkeiten.\", lat: 29.9507, lng: -90.0624, color: \"#2C5282\" }
+const NewOrleansBarMap = () => {
+  const [selectedBar, setSelectedBar] = useState(null);
+
+  const bars = [
+    { id: 1, name: "Carousel Bar", description: "Elegante Cocktailbar mit rotierender Theke im Hotel Monteleone.", lat: 29.9557, lng: -90.0678, color: "#FF6B6B" },
+    { id: 2, name: "Cure", description: "Preisgekrönte Cocktailbar, bekannt für kreative Drinks und stilvolles Ambiente.", lat: 29.9371, lng: -90.1063, color: "#6BCB77" },
+    { id: 3, name: "Sazerac Bar", description: "Legendäre Bar im Roosevelt Hotel, berühmt für den klassischen Sazerac-Cocktail.", lat: 29.9544, lng: -90.0725, color: "#4D96FF" },
+    { id: 4, name: "Pat O'Brien's", description: "Ikonische Bar im French Quarter, Heimat des berühmten Hurricane-Cocktails.", lat: 29.9584, lng: -90.0650, color: "#FFD93D" },
+    { id: 5, name: "Bacchanal Fine Wine & Spirits", description: "Gemütlicher Garten, erlesene Weine und hochwertige Speisen.", lat: 29.9633, lng: -90.0440, color: "#FF8E72" },
+    { id: 6, name: "The Elysian Bar", description: "Elegante Bar in historischem Gebäude mit anspruchsvollem Ambiente und exquisiten Cocktails.", lat: 29.9662, lng: -90.0523, color: "#845EC2" },
+    { id: 7, name: "French 75", description: "Noble Bar im Arnaud’s, bekannt für Champagner-Cocktails und erstklassigen Service.", lat: 29.9550, lng: -90.0662, color: "#FF9671" },
+    { id: 8, name: "Hot Tin Rooftop Bar", description: "Angesagte Rooftop-Bar mit spektakulärem Blick auf die Skyline von New Orleans.", lat: 29.9291, lng: -90.0794, color: "#2C73D2" },
+    { id: 9, name: "Lafitte's Blacksmith Shop", description: "Älteste Bar in den USA, historisches Ambiente bei Kerzenschein.", lat: 29.9617, lng: -90.0615, color: "#008F7A" },
+    { id: 10, name: "The Bombay Club", description: "Luxuriöse Cocktailbar mit Jazzmusik und hochwertiger Getränkekarte.", lat: 29.9564, lng: -90.0685, color: "#F76E11" }
   ];
 
   return (
-    <div className=\"flex flex-col h-screen w-full max-w-4xl mx-auto\">
-      <h1 className=\"text-2xl font-bold text-center my-4\">Top 10 Sehenswürdigkeiten in New Orleans</h1>
-      <ul className=\"space-y-2 overflow-auto\">
-        {pois.map(poi => (
-          <li key={poi.id} className={`p-4 rounded cursor-pointer ${selectedPOI === poi.id ? 'bg-blue-100' : 'bg-white hover:bg-gray-100'}`} onClick={() => setSelectedPOI(poi.id)}>
-            <div className=\"font-semibold\">{poi.name}</div>
-            {selectedPOI === poi.id && <div className=\"text-sm text-gray-600 mt-2\">{poi.description}</div>}
+    <div className="flex flex-col h-screen w-full max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold text-center my-4">Top 10 Bars und Pubs in New Orleans für verwöhnte Zürcher</h1>
+      <ul className="space-y-2 overflow-auto">
+        {bars.map(bar => (
+          <li key={bar.id} className={`p-4 rounded cursor-pointer ${selectedBar === bar.id ? 'bg-indigo-100' : 'bg-white hover:bg-gray-100'}`} onClick={() => setSelectedBar(bar.id)}>
+            <div className="font-semibold">{bar.name}</div>
+            {selectedBar === bar.id && <div className="text-sm text-gray-600 mt-2">{bar.description}</div>}
           </li>
         ))}
       </ul>
@@ -47,7 +47,7 @@ const NewOrleansMap = () => {
   );
 };
 
-ReactDOM.createRoot(document.getElementById('root')).render(<NewOrleansMap />);
+ReactDOM.createRoot(document.getElementById('root')).render(<NewOrleansBarMap />);
 </script>
 
 </body>
